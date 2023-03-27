@@ -1,5 +1,6 @@
 import React from 'react';
 import { useFruits } from '../hooks/useFruits';
+import Fruit from '../components/Fruit';
 
 const Fruits = () => {
   const { error, loading, data } = useFruits()
@@ -11,7 +12,16 @@ const Fruits = () => {
   })
 
   return (
-    <div>Fruits</div>
+    <div>
+      {
+        data.fruits.map((fruit, index) => {
+          return(
+            <p>{fruit.fruit_name}</p>
+          )
+        })
+      }
+
+    </div>
   )
 }
 
