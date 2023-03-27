@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import Fruits from './pages/Fruits';
 
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+      <Fruits />
+    </div>
   )
 }
 
