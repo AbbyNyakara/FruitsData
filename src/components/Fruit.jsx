@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { Fragment }from 'react'
 
-const Fruit = () => {
+const Fruit = (props) => {
+
+  const { name, index, family, tree, country} = props;
   return (
-    <div>Fruit</div>
+    <Fragment key={index} >
+      <p>Fruit Name: {name}</p>
+      <p>Fruit Family: {family}</p>
+      <p>Tree Name: {tree}</p>
+      <p>Producing countries: {country}</p>
+    </Fragment>
   )
 }
 

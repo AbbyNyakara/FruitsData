@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { useFruits } from '../hooks/useFruits';
 import Fruit from '../components/Fruit';
 
@@ -14,9 +14,20 @@ const Fruits = () => {
   return (
     <div>
       {
-        data.fruits.map((fruit, index) => {
+        data?.fruits.map((fruit, index) => {
           return(
-            <p>{fruit.fruit_name}</p>
+            <Fragment key={index}>
+              {/* <p>Fruit Name: {fruit.fruit_name}</p>
+              <p>Fruit Family: {fruit.family}</p>
+              <p>Tree Name: {fruit.tree_name}</p>
+              <p>Producing countries:  */}
+              {
+                fruit.producing_countries.map((country, idx) => {
+                  <p key={idx}>{country}</p>
+                })
+              }
+              {/* </p> */}
+            </Fragment>
           )
         })
       }
